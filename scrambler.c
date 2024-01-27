@@ -39,7 +39,7 @@ int main(int argc, char* argv[]) {
 
 	FILE* one = fopen(argv[2], "r");
 	//FILE* two = fopen(argv[3], "r");
-	if (!one) {
+	if (one==NULL) {
 		fprintf(stderr, "The selected %s is not available.\n", argv[2]);
 		return EXIT_FAILURE;
 	}
