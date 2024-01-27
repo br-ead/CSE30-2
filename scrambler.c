@@ -26,7 +26,7 @@ int main(int argc, char* argv[]) {
 
 	// TODO: command line error checking
 	if (argc !=4) {
-	fprintf(stderr, "usage: %s <-s | -u> <input-file> <key>\n", argv[0]);
+	fprintf(stderr, "usage: %s <-s|-u> <input-file> <key>\n", argv[0]);
 	return EXIT_FAILURE;
 	}	
 	// This suppresses warnings; TODO remove after you use these variables
@@ -40,7 +40,7 @@ int main(int argc, char* argv[]) {
 	FILE* one = fopen(argv[2], "r");
 	//FILE* two = fopen(argv[3], "r");
 	if (one==NULL) {
-		fprintf(stderr, "The selected %s is not available.\n", argv[2]);
+		printf("The selected %s is not available.\n", argv[2]);
 		return 1;
 	}
 	int count=strlen(argv[3]);
