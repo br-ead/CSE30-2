@@ -38,22 +38,18 @@ int main(int argc, char* argv[]) {
 	// TODO: Remember to handle errors!
 
 	FILE* one = fopen(argv[2], "r");
-	FILE* two = fopen(argv[3], "r");
+	//FILE* two = fopen(argv[3], "r");
 	if (!one) {
 		fprintf(stderr, "The selected %s is not available.\n", argv[2]);
 		return EXIT_FAILURE;
 	}
-	if (!two) {
-		fprintf(stderr, "The selected %s is not available.\n",argv[3]);
-		return EXIT_FAILURE;
-	}
-	int count=0;
-	int key=' ';
-	int second[10000];
-	while((key=fgetc(two))!=EOF) {
+	int count=strlen(argv[3]);
+	/*int key=' ';
+	int second[10000]; */
+	/* while((key=fgetc(two))!=EOF) {
 		count=count+1;
 		second[count]=key;	
-	}	
+	} */
 	if (scramble==true) {
 		int x=fgetc(one);
 		int counter=0;
@@ -74,7 +70,7 @@ int main(int argc, char* argv[]) {
 			if (x>=65 && x<=90) {
 			
 	
-				char value = ((x-'A')+(second[counter+1]-'A'))%26+'A';
+				char value = ((x-'A')+(argv[3][counter+1]-'A'))%26+'A';
 				//printf("%c",x);
 				x=fgetc(one);
 				//printf("%d",counter+1);
@@ -105,7 +101,7 @@ int main(int argc, char* argv[]) {
 			if (x>=65 && x<=90) {
 			
 	
-				char value = ((x-'A')+26-(second[counter+1]-'A'))%26+'A';
+				char value = ((x-'A')+26-(argv[3][counter+1]-'A'))%26+'A';
 				printf("%c",value);
 				x=fgetc(one);
 			
