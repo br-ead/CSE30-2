@@ -117,6 +117,6 @@ int main(int argc, char* argv[]) {
 	// TODO: do your thing
 	// TODO: close the file
 	fclose(one);
-	fclose(two);
+	//fclose(two);
 	return 0;
 }
