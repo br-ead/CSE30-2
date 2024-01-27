@@ -41,7 +41,7 @@ int main(int argc, char* argv[]) {
 	//FILE* two = fopen(argv[3], "r");
 	if (one==NULL) {
 		fprintf(stderr, "The selected %s is not available.\n", argv[2]);
-		return EXIT_FAILURE;
+		return 1;
 	}
 	int count=strlen(argv[3]);
 	/*int key=' ';
