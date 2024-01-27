@@ -7,6 +7,7 @@
 int main(int argc, char* argv[]) {
 	int opt;
 	bool scramble = true;
+	
 	while ((opt = getopt(argc, argv, "us")) != -1) {
 		switch (opt) {
 		case 's':
