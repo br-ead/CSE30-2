@@ -54,7 +54,7 @@ int main(int argc, char* argv[]) {
 		int x=fgetc(one);
 		int counter=0;
 		while (x!= EOF) {
-			if (counter==count-1) {
+			if (counter==count) {
 				counter=0;
 			}
 			if(x<65 || x>90) {
@@ -70,7 +70,7 @@ int main(int argc, char* argv[]) {
 			if (x>=65 && x<=90) {
 			
 	
-				char value = ((x-'A')+(argv[3][counter+1]-'A'))%26+'A';
+				char value = ((x-'A')+(argv[3][counter]-'A'))%26+'A';
 				//printf("%c",x);
 				x=fgetc(one);
 				//printf("%d",counter+1);
@@ -85,7 +85,7 @@ int main(int argc, char* argv[]) {
 	int x=fgetc(one);
 		int counter=0;
 		while (x!= EOF) {
-			if (counter==count-1) {
+			if (counter==count) {
 				counter=0;
 			}
 			if(x<65 || x>90) {
@@ -101,7 +101,7 @@ int main(int argc, char* argv[]) {
 			if (x>=65 && x<=90) {
 			
 	
-				char value = ((x-'A')+26-(argv[3][counter+1]-'A'))%26+'A';
+				char value = ((x-'A')+26-(argv[3][counter]-'A'))%26+'A';
 				printf("%c",value);
 				x=fgetc(one);
 			
